@@ -30,7 +30,7 @@ def getPrimes(n):
 
     # Initialize array of prime candidates
     # sieve[i] = 2 * i + 1 => 1, 3, 5...
-    sieve = [False] * (sievebound+1)
+    sieve = [False] * (sievebound+1)    
     sieve[0] = True
 
     # Test all n from 1...cross => 3..SQRT(n)
