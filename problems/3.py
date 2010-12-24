@@ -7,19 +7,17 @@ What is the largest prime factor of the number 600851475143 ?
 from util import primesieve
 
 if __name__ == '__main__':
-    pass
-
-num = 600851475143
-
-# Largest distinct factor is <= to SQRT
-max = round(pow(600851475143, .5))
-
-primes = primesieve.getPrimes(max)
-
-# Since we're looking for the largest, start at the end
-primes.reverse()
-
-for p in primes:
-    if num % p == 0:
-        print p
-        break
+    num = 600851475143
+    
+    # Largest distinct factor is <= to SQRT
+    max = round(pow(600851475143, .5))
+    
+    primes = primesieve.getPrimes(max)
+    
+    # Since we're looking for the largest, start at the end
+    primes.reverse()
+    
+    for p in primes:
+        if num % p == 0:
+            print p
+            break
