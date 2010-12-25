@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # Per the fundamental theorem of arithmetic:
     # http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic
     # Every number can be factored as a multiple of primes in the form:
-    # p1 ^ n1 * p2 ^ n2 * p3 ^ n3 ... pi ^ ni
+    # p1 ^ i1 * p2 ^ i2 * p3 ^ i3 ... pi ^ in
     # Therefore, the only numbers we need to multiply are the primes, but
     # the tricky part is to figure out the specific exponents of each prime
     # To do that we would need to determine the largest exponent of our prime 
