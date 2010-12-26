@@ -34,7 +34,7 @@ def getPrimes(n):
     sieve[0] = True
 
     # Test all n from 1...cross => 3..SQRT(n)
-    for i in xrange(1, cross, 1):
+    for i in xrange(1, int(cross), 1):
 
         # By definition, any i with no factors is prime
         if sieve[i] == False:

@@ -1,7 +1,5 @@
 '''
-Created on Oct 23, 2010
-
-@author: Sameer
+Prime Sieve Unit Tests
 '''
 import unittest
 from util.primesieve import getPrimes
