@@ -7,8 +7,6 @@ What is the 10001st prime number?
 from primesieve import getPrimes
 
 if __name__ == '__main__':
-    index = 10001
-    
-    # Let's choose a safe boundary at 100 * max
-    primes = getPrimes(index * 100)
-    print primes[10001]
+    index = 10001    
+    primes = getPrimes(1000000)
+    print primes[index-1]
