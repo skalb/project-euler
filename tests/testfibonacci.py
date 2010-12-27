@@ -2,7 +2,7 @@
 Fibonacci Unit Tests
 '''
 import unittest
-from util.fibonacci import fibonacci
+import fibonacci
 
 class Test(unittest.TestCase):
 

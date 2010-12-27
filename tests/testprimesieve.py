@@ -2,7 +2,7 @@
 Prime Sieve Unit Tests
 '''
 import unittest
-from util.primesieve import getPrimes
+from primesieve import getPrimes
 
 class Test(unittest.TestCase):
 

@@ -4,13 +4,13 @@
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 '''
 
-from util import primesieve
+from primesieve import getPrimes
 import math
 
 if __name__ == '__main__':    
     max = 20    
     numbers = range(2,max+1,1)
-    primes = primesieve.getPrimes(numbers[-1])
+    primes = getPrimes(numbers[-1])
     result = 1   
     
     # Per the fundamental theorem of arithmetic:
