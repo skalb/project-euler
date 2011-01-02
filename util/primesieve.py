@@ -19,22 +19,22 @@ def getPrimes(n):
         return []
 
     # Determine the number of odd prime candidates
-    sievebound = int(ceil((n-1) / 2))
+    sievebound = int(ceil(n-1) / 2) + 1
 
     # We know that for any number n with factors (a,b)
     # such that n = a * b, MIN(a,b) <= SQRT(n)
     # With this in mind, we only need to check factors
     # up to SQRT(n) since any factor greater would have a
     # corresponding smaller factor pair
-    cross = ceil((pow(n, .5)-1) / 2)
+    cross = int(ceil((pow(n, .5)-1) / 2))
 
     # Initialize array of prime candidates
     # sieve[i] = 2 * i + 1 => 1, 3, 5...
-    sieve = [False] * (sievebound+1)    
+    sieve = [False] * (sievebound)    
     sieve[0] = True
 
     # Test all n from 1...cross => 3..SQRT(n)
-    for i in xrange(1, int(cross), 1):
+    for i in xrange(1, cross, 1):
 
         # By definition, any i with no factors is prime
         if sieve[i] == False:
@@ -59,7 +59,7 @@ def getPrimes(n):
     primes = [2]
     
     # All candidates with no factors are prime numbers    
-    for i in xrange(0, sievebound+1, 1):
+    for i in xrange(0, sievebound, 1):
         if sieve[i] == False:
             primes.append(2*i + 1)            
          
