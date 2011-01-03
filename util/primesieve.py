@@ -10,10 +10,10 @@ Optimizations included from solution provided at:
 http://projecteuler.net/index.php?section=problems&id=3
 '''
 
-from math import ceil
+from math import ceil, sqrt
 
 # Returns list of primes less than upper bound n
-def getPrimes(n):
+def get_primes(n):
     
     if n <= 1:
         return []
@@ -26,7 +26,7 @@ def getPrimes(n):
     # With this in mind, we only need to check factors
     # up to SQRT(n) since any factor greater would have a
     # corresponding smaller factor pair
-    cross = int(ceil((pow(n, .5)-1) / 2))
+    cross = int(ceil((sqrt(n)-1) / 2))
 
     # Initialize array of prime candidates
     # sieve[i] = 2 * i + 1 => 1, 3, 5...

@@ -6,7 +6,7 @@ import fibonacci
 
 class Test(unittest.TestCase):
 
-    def testFibonacci(self):
+    def test_fibonacci(self):
         f = fibonacci()
         self.assertEquals(f.next(), 1)
         self.assertEquals(f.next(), 2)

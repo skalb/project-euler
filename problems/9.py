@@ -14,19 +14,19 @@ Find the product abc.
 # b = 2mn
 # c = m^2 + n^2
 
-if __name__ == '__main__':
+def get_product(sum):
     m = 2
-    found = False
     
-    while not found:
+    while True:
         for n in xrange(1, m, 2):
             a,b,c = pow(m,2) - pow(n,2), 2 * m * n, pow(m,2) + pow(n,2)
             
-            if a + b + c == 1000:
-                print a * b * c
-                found = True
-                break
+            if a + b + c == sum:
+                return a * b * c
             
         m = m + 1
+
+if __name__ == '__main__':
+    print get_product(1000)
                 
         
