@@ -1,7 +1,7 @@
 '''
 In the 2020 grid below, four numbers along a diagonal line have been marked in red.
 
-What is the greatest product of four adjacent numbers in any direction (up, down, left, right, or diagonally) in the 2020 grid?
+What is the greatest max_product of four adjacent numbers in any direction (up, down, left, right, or diagonally) in the 2020 grid?
 '''
 
 import operator
@@ -29,9 +29,10 @@ if __name__ == '__main__':
              "20,73,35,29,78,31,90,01,74,31,49,71,48,86,81,16,23,57,05,54",
              "01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48"]
     
+    # Convert the list of strings into a 2D int array
     grid = [[int(j) for j in i.split(",")] for i in input]
     
-    width, height, product = 20, 20, 0
+    width, height, max_product = 20, 20, 0
     increments = [0,1,2,3]
     
     # We only need to do right, down, and both diagonals since
@@ -41,20 +42,23 @@ if __name__ == '__main__':
             if grid[x][y] == 0:
                 continue
             
+            # If there is room, see if the max_product of the current number
+            # and the 3 numbers right, down, left diag, or right diag
+            # are greater than the current max max_product
             if y + 3 < width:
                 right = [grid[x][y + i] for i in increments]
-                product = max(product, reduce(operator.mul, right))
+                max_product = max(max_product, reduce(operator.mul, right))
                     
             if x + 3 < height:
                 down = [grid[x + i][y] for i in increments]
-                product = max(product, reduce(operator.mul, down))
+                max_product = max(max_product, reduce(operator.mul, down))
             
                 if y + 3 < width:
                     rightdiag = [grid[x + i][y + i] for i in increments]
-                    product = max(product, reduce(operator.mul, rightdiag))
+                    max_product = max(max_product, reduce(operator.mul, rightdiag))
                  
                 if y - 3 >= 0:
                     leftdiag = [grid[x + i][y - i] for i in increments]
-                    product = max(product, reduce(operator.mul, leftdiag))
+                    max_product = max(max_product, reduce(operator.mul, leftdiag))
              
-    print product
+    print max_product

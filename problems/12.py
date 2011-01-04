@@ -24,14 +24,17 @@ from triangle_numbers import triangle_number
 if __name__ == '__main__':
     triangle_numbers = triangle_number()
     t = triangle_numbers.next()
+    
     divisors = 0
-    while divisors <= 500:
+    
+    while divisors <= 250:
         t = triangle_numbers.next()
         
         divisor_bound = int(sqrt(t)) + 1
         
         # Since divisors come in pairs, we can just find all the divisors <= sqrt(t)
-        divisors = len([n for n in xrange(1, divisor_bound, 1) if t % n == 0]) * 2
+        # In this case we only need to check for 250
+        divisors = len([n for n in xrange(1, divisor_bound, 1) if t % n == 0])
         
     print t
         
