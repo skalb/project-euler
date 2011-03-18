@@ -1,5 +1,5 @@
 '''
-Simple fibonacci generator
+Simple Fibonacci generator
 '''
 
 def fibonacci():
